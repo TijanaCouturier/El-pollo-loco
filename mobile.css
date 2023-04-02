@@ -1,0 +1,153 @@
+/* Smartphones ------ */
+
+@media only screen and (max-width: 1000px) {
+    #canvas {
+        width: 100vw;
+        height: 100vh;
+    }
+    .startContainer {
+        width: auto;
+        height: auto;
+        position: absolute;
+    }
+    .startImg {
+        width: 100vw;
+        height: 100%;
+    }
+    #gameOver {
+        width: 100vw;
+        height: 100vh;
+    }
+    .go {
+        width: 100vw;
+    }
+    .gameOverImg {
+        width: 100vw;
+        height: 100%;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    .overlay {
+        display: flex;
+        position: absolute;
+        bottom: 15px;
+        width: 100%;
+    }
+    .startContainer {
+        position: absolute;
+        width: auto;
+        height: 100vh;
+    }
+    #canvas {
+        width: 100%;
+        height: 100vh;
+    }
+    .startImg {
+        width: 100vw;
+    }
+    #infoDescription {
+        margin-left: 0;
+        max-width: 400px;
+    }
+    #title {
+        position: absolute;
+        top: 0;
+    }
+    #gameOverImg {
+        width: 100%;
+    }
+    .btn {
+        width: 20px;
+        height: 20px;
+    }
+    /*
+    .panel-wrapperStartLeft {
+        position: absolute;
+        left: 55px;
+        bottom: 10px;
+        padding-left: 15px;
+    }
+    .panel-wrapperStartRight {
+        position: absolute;
+        right: 55px;
+        bottom: 10px;
+    }
+    */
+}
+
+@media only screen and (max-width: 480px) {
+    .startContainer {
+        height: 100vh;
+        width: auto;
+    }
+    canvas {
+        height: 100vh;
+        width: 100%;
+        border-radius: 0;
+        background-color: transparent;
+    }
+    .overlay {
+        display: block;
+    }
+    #title {
+        /* position: absolute;
+        top: 0; */
+        display: none;
+    }
+    .h1 {
+        position: absolute;
+        top: 0;
+    }
+    .btn {
+        width: 30px;
+        height: 30px;
+    }
+    /*.startContainer img {
+        width: 480px;
+    }*/
+    .startImg {
+        position: absolute;
+        top: 122px;
+        width: 100vw;
+    }
+    .startContainer a {
+        position: relative;
+        top: 100px;
+        width: 480px;
+    }
+    #infoDescription {
+        margin-left: 35px;
+    }
+    .go {
+        width: 480px;
+    }
+}
+
+@media only screen and (min-width:320px) and (max-width:767px) and (orientation:portrait) {
+    .mobile-warning {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        height: auto;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 3);
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 25px;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        z-index: 101;
+        font-size: 32px;
+        color: rgb(148, 0, 0);
+        text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+        margin: 0px;
+    }
+    .phone-icon {
+        width: 50px;
+        filter: invert();
+    }
+}

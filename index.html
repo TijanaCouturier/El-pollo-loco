@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile.css">
+    <script src="models/drawable-object.class.js"></script>
+    <script src="models/movable-object.class.js"></script>
+    <script src="models/character.class.js"></script>
+    <script src="models/chicken.class.js"></script>
+    <script src="models/chicken-small.class.js"></script>
+    <script src="models/cloud.class.js"></script>
+    <script src="models/bottle.class.js"></script>
+    <script src="models/coin.class.js"></script>
+    <script src="models/background-object.class.js"></script>
+    <script src="models/status-bar.class.js"></script>
+    <script src="models/livebar.class.js"></script>
+    <script src="models/bottlebar.class.js"></script>
+    <script src="models/coinbar.class.js"></script>
+    <script src="models/world.class.js"></script>
+    <script src="models/keyboard.class.js"></script>
+    <script src="models/level.class.js"></script>
+    <script src="models/throwable-object.class.js"></script>
+    <script src="models/endboss.class.js"></script>
+    <script src="levels/level1.js"></script>
+    <script src="js/game.js"></script>
+    <title>El Pollo Loco</title>
+    <link rel="icon" href="img/2_character_pepe/2_walk/W-21.png">
+    <!-- <a href="https://de.freepik.com/vektoren-kostenlos/langer-weg-durch-wuestenwaldlandschaft-bei-sonnenuntergangsszene-mit-pyramide-von-gizeh_13988229.htm#query=w%C3%BCste&position=19&from_view=search&track=ais">Bild von brgfx</a> auf Freepik -->
+
+</head>
+
+<body onload="init()">
+    <h1 id="title">El pollo loco</h1>
+
+    <div id="startContainer" class="startContainer">
+        <img class="startImg" id="startImg" src="img/9_intro_outro_screens/start/startscreen_1.png">
+        <div class="panel">
+            <div class="panel-wrapper d-none" id="fullscreen-div">
+                <button id="btnBack" title="back"><img class="btn" src="img/undo.png" onclick="restart()"></button>
+                <!--<button id="btnPlay"><img class="btn" src="img/arrow-39-24.png"></button>-->
+                <button id="btnMute" title="mute"><img id="btnMute1" class="btn" src="img/speaker-on.png" onclick="musicOf(this)"></button>
+
+                <div id="showFullscreen" onclick="fullscreen()">
+                    <img class="btnFullscreen" src="img/fullscreen.png">
+                </div>
+            </div>
+        </div>
+        <div id="infoDescription">Walk left: ⬅ | Walk right: ➡ <br> Jump: SPACE | Throw Bottle: D </div>
+        <div class="start-game"><button id="start-btn" onclick="startGame()" class="start-game-btn">Start Game</button></div>
+
+        <a id="gameOver" class="position d-none" href="index.html">
+            <img class="go" src="img/5_background/second_half_background.png">
+            <img class="gameOverImg" id="gameOverImg" src="img/9_intro_outro_screens/game_over/game over.png">
+            <div id="restart">Play Again</div>
+        </a>
+
+        <canvas id="canvas" width="720" height="480"></canvas>
+        <!--Mobile Version-->
+        <div id="overlay" class="overlay d-none">
+            <div class="panel">
+                <div class="panel-wrapperStartLeft">
+                    <button id="btnLeft"><img class="btn" src="img/left.png"></button>
+                    <button id="btnRight"><img class="btn" src="img/right.png"></button>
+                </div>
+
+                <div class="panel-wrapperStartRight">
+                    <button id="btnJump"><img class="btn" src="img/up.png"></button>
+                    <button id="btnThrow"><img class="btn bottle" src="img/throw.png"></button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="mobile-warning">
+        <img class="phone-icon" src="img/phone.png">
+        <p>Please turn around your mobile phone.</p>
+    </div>
+
+    <!--
+     <div id="fullscreen-btn" class="fullscreen-btn pointer hide" onclick="showFullscreen() ">
+        <i class="material-icons">fullscreen</i>
+     </div>
+     <div id="fullscreenexit-btn" class="fullscreenexit-btn pointer hide" onclick="exitFullscreen() ">
+        <i class="material-icons">fullscreen_exit</i>
+     </div>
+
+
+
+      oder
+     <div id="enterfullscreen" onclick="activateFullscreen();">
+            <span class="">
+                <button><img><button>
+            </span>
+     </div>
+    -->
+
+
+
+
+</body>
+
+</html>

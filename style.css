@@ -1,0 +1,222 @@
+@font-face {
+    font-family: 'zabras';
+    src: url('fonds/zabars.ttf') format('truetype');
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    background-image: url('img/wuste.jpg');
+    background-position: center;
+    font-family: 'zabras', Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+.start-game {
+    position: absolute;
+    bottom: 15px;
+}
+
+.start-game-btn {
+    background-color: rgb(252, 164, 2);
+    /* background-color: #e9a52b; */
+    box-shadow: 0px 0px 6px 0px #6c6c6c;
+    border-radius: 10px;
+    font-weight: bold;
+    border: none;
+    height: 42px;
+    width: 250px;
+    cursor: pointer;
+    font-family: 'zabras', Arial, Helvetica, sans-serif;
+    letter-spacing: 3px;
+    font-size: 22px;
+}
+
+.start-game-btn:hover {
+    filter: brightness(1.15);
+    transform: scale(1.1);
+}
+
+canvas {
+    background-color: black;
+    display: block;
+    border-radius: 10px;
+}
+
+.startContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    width: 720px;
+    height: 480px;
+    z-index: 1;
+}
+
+.startImg {
+    position: absolute;
+    height: 480px;
+    width: 720px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0px 0px 6px 0px #6c6c6c;
+}
+
+.startContainer a {
+    position: absolute;
+    height: 480px;
+    width: 720px;
+    display: flex;
+    justify-content: center;
+    font-size: 120px;
+}
+
+.gameOverImg {
+    position: absolute;
+    height: 480px;
+    width: 720px;
+}
+
+.go {
+    width: 720px;
+}
+
+h1 {
+    font-size: 64px;
+    letter-spacing: 5px;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.d-none {
+    display: none !important;
+}
+
+#infoDescription {
+    position: absolute;
+    max-width: 720px;
+    top: 33px;
+    color: white;
+    font-size: 32px;
+    letter-spacing: 3px;
+    margin-left: 227px;
+}
+
+#restart {
+    position: absolute;
+    max-width: 720px;
+    bottom: 30px;
+    font-size: 32px;
+    letter-spacing: 3px;
+    text-align: center;
+    color: white;
+}
+
+.position {
+    top: 0px;
+    width: 720px;
+    height: 480px;
+}
+
+.panel-wrapper {
+    height: 42px;
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    position: absolute;
+    top: 30px;
+    right: 40px;
+}
+
+
+/*
+.panel-wrapperStart {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: flex-start;
+    position: absolute;
+    top: 181px;
+    right: 209px;
+} */
+
+.panel {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.panel-wrapperStartLeft {
+    padding-left: 15px;
+}
+
+.btn {
+    width: 20px;
+    height: 20px;
+}
+
+#btnPlay,
+#btnJump,
+#btnLeft,
+#btnRight,
+#btnThrow,
+#btnMute {
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    border: none;
+    user-select: none;
+    margin-inline-end: 25px;
+    /* background-color: rgb(0, 0, 0, 0.4); */
+    background-color: rgb(252, 164, 2);
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 6px 0px #6c6c6c;
+    cursor: pointer;
+    /* background-color: #5f4949;
+    background-color: #4b0e0e;
+    background-color: #6c6969; */
+}
+
+#btnBack {
+    background-color: rgb(252, 164, 2);
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 6px 0px #6c6c6c;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    border: none;
+    user-select: none;
+    margin-inline-end: 25px;
+}
+
+.fullscreen {
+    background-size: 84.375% 100%;
+}
+
+.btnFullscreen {
+    width: 35px;
+    cursor: pointer;
+}
+
+.mobile-warning {
+    display: none;
+}
+
+.fullscreen {
+    border-radius: unset;
+}
+
+.canvasFullscreen {
+    height: 100%;
+    width: 100%;
+}
+
+.overlay {
+    display: none;
+}
