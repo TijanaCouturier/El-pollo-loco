@@ -3,7 +3,7 @@ class Character extends MovableObject {
     x = 80;
     height = 130;
     width = 230;
-    speed = 10;
+    speed = 5;
     idle = 0;
     world;
     walking_sound = new Audio('audio/run.mp3');
@@ -96,7 +96,7 @@ class Character extends MovableObject {
 
 
     animate() {
-        this.sleep_sound.pause();
+        // this.sleep_sound.pause();
         this.animateKeyboard();
         setInterval(() => {
             if (this.isDead()) {

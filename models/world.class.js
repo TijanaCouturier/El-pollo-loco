@@ -15,7 +15,7 @@ class World {
     chicken_sound = new Audio('audio/chicken.mp3');
     endbossDead_sound = new Audio('audio/endbossDead.mp3');
     coin_sound = new Audio('audio/coin.mp3');
-    bottle_sound = new Audio('audio/bottle.mp3');
+    bottle_sound = new Audio('audio/bot.mp3');
     bottleThrow_sound = new Audio('audio/bottleThrow.mp3');
 
 

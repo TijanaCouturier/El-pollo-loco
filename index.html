@@ -44,16 +44,16 @@
                 <!--<button id="btnPlay"><img class="btn" src="img/arrow-39-24.png"></button>-->
                 <button id="btnMute" title="mute"><img id="btnMute1" class="btn" src="img/speaker-on.png" onclick="musicOf(this)"></button>
 
-                <div id="showFullscreen" onclick="fullscreen()">
-                    <img class="btnFullscreen" src="img/fullscreen.png">
+                <div>
+                    <img class="btnFullscreen" id="showFullscreen" onclick="fullscreen()" src="img/fullscreen.png">
                 </div>
             </div>
         </div>
         <div id="infoDescription">Walk left: ⬅ | Walk right: ➡ <br> Jump: SPACE | Throw Bottle: D </div>
         <div class="start-game"><button id="start-btn" onclick="startGame()" class="start-game-btn">Start Game</button></div>
 
-        <a id="gameOver" class="position d-none" href="index.html">
-            <img class="go" src="img/5_background/second_half_background.png">
+        <a id="gameOver" class="startContainers position d-none" href="index.html">
+            <img class="go" id="go" src="img/5_background/second_half_background.png">
             <img class="gameOverImg" id="gameOverImg" src="img/9_intro_outro_screens/game_over/game over.png">
             <div id="restart">Play Again</div>
         </a>
