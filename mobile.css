@@ -1,32 +1,5 @@
 /* Smartphones ------ */
 
-@media only screen and (max-width: 1000px) {
-    #canvas {
-        width: 100vw;
-        height: 100vh;
-    }
-    .startContainer {
-        width: auto;
-        height: auto;
-        position: absolute;
-    }
-    .startImg {
-        width: 100vw;
-        height: 100%;
-    }
-    #gameOver {
-        width: 100vw;
-        height: 100vh;
-    }
-    .go {
-        width: 100vw;
-    }
-    .gameOverImg {
-        width: 100vw;
-        height: 100%;
-    }
-}
-
 @media only screen and (max-width: 720px) {
     .overlay {
         display: flex;

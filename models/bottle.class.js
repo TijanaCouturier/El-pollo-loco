@@ -13,6 +13,5 @@ class Bottle extends MovableObject {
         this.y = y;
         this.width = 60;
         this.height = 70;
-
     }
 }

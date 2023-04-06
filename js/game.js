@@ -8,11 +8,17 @@ let checked = true;
 let isFullscreen = true;
 
 
+/**
+ * load the canvas and start-img
+ */
 function init() {
     canvas = document.getElementById('canvas');
 }
 
 
+/**
+ * when you click on the start button, a new game will be started
+ */
 function startGame() {
     initLevel();
     document.getElementById('overlay').classList.remove('d-none');
@@ -24,12 +30,18 @@ function startGame() {
     document.getElementById('fullscreen-div').classList.remove('d-none');
     canvas = document.getElementById('canvas');
     world = new World(canvas, keyboard);
+    console.log("teststartg", world)
+    this.music.loop = true;
     this.music.play();
     touchButtons();
 }
 
 
+/**
+ * restart the game and reload
+ */
 function restart() {
+    console.log("test");
     document.getElementById('overlay').classList.add('d-none');
     document.getElementById('startImg').classList.remove('d-none');
     document.getElementById('gameOver').classList.add('d-none');
@@ -43,25 +55,34 @@ function restart() {
 }
 
 
+/**
+ * game is over
+ */
 function gameOver() {
-    setTimeout(() => {
-        document.getElementById('start-btn').classList.add('d-none');
-        document.getElementById('overlay').classList.add('d-none');
-        document.getElementById('canvas').classList.add('d-none');
-        document.getElementById('gameOver').classList.remove('d-none');
-        document.getElementById('fullscreen-div').classList.add('d-none');
+    document.getElementById('start-btn').classList.add('d-none');
+    document.getElementById('overlay').classList.add('d-none');
+    document.getElementById('canvas').classList.add('d-none');
+    document.getElementById('gameOver').classList.remove('d-none');
+    document.getElementById('fullscreen-div').classList.add('d-none');
 
-        this.music.pause();
-    }, 600);
+    this.music.pause();
+    world.character.sleep_sound.pause();
 }
 
 
+/**
+ * music off/on when clicking on mute button
+ */
 function musicOf() {
     if (!isMusicOf) {
         this.music.pause();
+        world.character.sleep_sound.pause();
+
         document.getElementById('btnMute1').src = 'img/mute-off.png';
         isMusicOf = true;
+
     } else {
+
         this.music.play();
         document.getElementById('btnMute1').src = 'img/speaker-on.png';
         isMusicOf = false;
@@ -69,6 +90,9 @@ function musicOf() {
 }
 
 
+/**
+ * play with the keyboard - keydown - activ 
+ */
 window.addEventListener("keydown", (e) => {
     if (e.keyCode == 39) {
         keyboard.RIGHT = true;
@@ -91,6 +115,9 @@ window.addEventListener("keydown", (e) => {
 });
 
 
+/**
+ * play with the keyboard - keyup - not activ
+ */
 window.addEventListener("keyup", (e) => {
     if (e.keyCode == 39) {
         keyboard.RIGHT = false;
@@ -113,6 +140,9 @@ window.addEventListener("keyup", (e) => {
 });
 
 
+/**
+ * play the game with the touchButtons in mobile Version
+ */
 function touchButtons() {
     this.buttonLeft();
     this.buttonRight();
@@ -121,6 +151,9 @@ function touchButtons() {
 }
 
 
+/**
+ * mobile - touch button for left = keyboard Left
+ */
 function buttonLeft() {
     document.getElementById('btnLeft').addEventListener('touchstart', (event) => {
         event.preventDefault();
@@ -133,6 +166,9 @@ function buttonLeft() {
 }
 
 
+/**
+ * mobile - touch button for right = keyboard Right
+ */
 function buttonRight() {
     document.getElementById('btnRight').addEventListener('touchstart', (event) => {
         event.preventDefault();
@@ -145,6 +181,9 @@ function buttonRight() {
 }
 
 
+/**
+ * mobile - touch button for jump = keyboard Space
+ */
 function buttonJump() {
     document.getElementById('btnJump').addEventListener('touchstart', (event) => {
         event.preventDefault();
@@ -157,6 +196,9 @@ function buttonJump() {
 }
 
 
+/**
+ * mobile - touch button for throw buttle = keyboard D 
+ */
 function buttonThrow() {
     document.getElementById('btnThrow').addEventListener('touchstart', (event) => {
         event.preventDefault();
@@ -187,6 +229,9 @@ function fullscreen() {
 }
 
 
+/**
+ * fullscreen Icon change
+ */
 function fullscreenIcon() {
     if (!isFullscreen) {
         document.getElementById('showFullscreen').src = 'img/fullscreen.png'

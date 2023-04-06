@@ -9,7 +9,9 @@ class Level {
     level_end_x = 720 * 9;
     world;
 
-
+    /**
+     * all game elements
+     */
     constructor(enemies, smallEnemies, endboss, coins, bottles, clouds, backgroundObjects) {
         this.enemies = enemies;
         this.smallEnemies = smallEnemies;

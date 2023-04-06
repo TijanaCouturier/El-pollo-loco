@@ -58,13 +58,19 @@ class Endboss extends MovableObject {
     }
 
 
+    /**
+     *  EndbossWalk true
+     */
     EndbossWalk() {
         this.contact = true;
     }
 
 
+    /**
+     *  Endboss is hurt
+     */
     EndbossHurt() {
-        this.energy -= 40;
+        this.energy -= 20;
         if (this.energy < 0) {
             this.energy = 0;
         }
@@ -77,29 +83,52 @@ class Endboss extends MovableObject {
     }
 
 
+    /**
+     *  Endboss is dead
+     */
     EndbossKill() {
         setInterval(() => {
             this.playAnimation(this.IMAGES_DEAD);
-        }, 500);
-        gameOver();
+        }, 1000);
+        setInterval(() => {
+            gameOver();
+        }, 2000);
     }
 
 
+    /**
+     *  Endboss move left
+     */
     EndbossMoveLeft() {
         setInterval(() => {
-            this.moveLeft();
+            if (!this.EndbossIsDead()) {
+                this.moveLeft();
+            }
         }, 50);
     }
 
 
+    /**
+     *  is Endboss dead: is energy = 0? 
+     */
+    EndbossIsDead() {
+        return this.energy == 0;
+    }
+
+
+    /**
+     *  Endboss animation. If Endboss not dead - move to charackter 
+     */
     animate() {
         setInterval(() => {
             if (this.isHit == false) {
                 this.playAnimation(this.IMAGES_ANGRY);
             }
             if (this.contact == true) {
-                this.playAnimation(this.IMAGES_WALKING);
-                this.EndbossMoveLeft();
+                if (!this.EndbossIsDead()) {
+                    this.playAnimation(this.IMAGES_WALKING);
+                    this.EndbossMoveLeft();
+                }
             }
         }, 200);
     }

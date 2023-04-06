@@ -25,11 +25,19 @@ class ChickenSmall extends MovableObject {
     }
 
 
-    dead() {
+    /**
+     * small chicken is dead 
+     */
+    deadChicken() {
         super.dead();
     }
 
 
+    /**
+     * chicken animation
+     * if small chickene dead, dead image is shown
+     * if small chicken is not dead then image walking is shown
+     */
     animate() {
         setInterval(() => {
             if (!this.isDead()) {

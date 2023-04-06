@@ -1,4 +1,5 @@
 class ThrowableObject extends MovableObject {
+    test = 12;
 
     IMAGES_ROTATION = [
         './img/6_salsa_bottle/bottle_rotation/1_bottle_rotation.png',
@@ -25,25 +26,29 @@ class ThrowableObject extends MovableObject {
         this.height = 80;
         this.width = 80;
         this.throw();
-        this.clean();
     }
 
 
+    /**
+     * throw bottle with rotation
+     */
     throw () {
-        this.speedY = 20;
-        this.applyGravity();
-        setInterval(() => this.x += 12, 25);
+        this.speedY = 17;
+        this.applyGravityB();
+        setInterval(() => this.x += this.test, 25);
         setInterval(() => this.playAnimation(this.IMAGES_ROTATION), 50);
     }
 
 
+    /**
+     * the bottle will splash when hitting enemies or endbos
+     */
     clean() {
-        var refreshIntervalId = setInterval(() => {
-            if (this.currentImage < this.IMAGES_CLEAN.length)
-                this.playAnimationA(this.IMAGES_CLEAN);
-            else {
-                clearInterval(refreshIntervalId);
-            }
-        }, 10);
+        this.active = false;
+        this.speedY = 0;
+        this.acceleration = 0;
+        this.test = 0;
+
+        setInterval(() => this.playAnimationA(this.IMAGES_CLEAN), 50);
     }
 }
