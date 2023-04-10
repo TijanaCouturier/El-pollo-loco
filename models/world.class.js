@@ -4,6 +4,7 @@ class World {
     canvas;
     ctx;
     keyboard;
+    throwTimeout = false;
     camera_x = 0;
     liveBar = new LiveBar();
     bottleBar = new BottleBar();
@@ -52,7 +53,7 @@ class World {
         }, 5);
         setInterval(() => {
             this.checkThrowObjects();
-        }, 100);
+        }, 1);
         setInterval(() => {
             this.checkCharacterIsNearToEndboss();
         }, 150)
@@ -233,16 +234,21 @@ class World {
      * chack collision character with bottle
      */
     checkThrowObjects() {
-        if (this.keyboard.D && this.bottle_counter > 0) {
-            let bottle = new ThrowableObject(this.character.x, this.character.y + 10);
+        if (this.keyboard.D && this.bottle_counter > 0 && !this.character.otherDirection && !this.throwTimeout) {
+            let bottle = new ThrowableObject(this.character.x + 20, this.character.y + 80);
             this.throwableObjects.push(bottle);
             this.bottle_counter--;
             this.bottleBar.setPercentage(this.bottle_counter / 5 * 100);
             this.checkBottleHit();
             this.character.idle = 0;
+            this.throwTimeout = true;
             if (!isMusicOf) {
                 this.bottleThrow_sound.play();
             }
+
+            setTimeout(() => {
+                this.throwTimeout = false;
+            }, 750); // bottle throw timout
         }
     }
 
@@ -269,7 +275,6 @@ class World {
             if (enemy.isDead()) {
                 level1.smallEnemies.splice(level1.smallEnemies.findIndex(a => a == enemy), 1);
             }
-
         })
     }
 
@@ -279,7 +284,7 @@ class World {
      */
     checkCollisions() {
         level1.enemies.forEach((enemy) => {
-            if (this.character.isColliding(enemy, 80) && this.character.isAboveGround()) {
+            if (this.character.isColliding(enemy, 80) && this.character.isAboveGround() && this.character.speedY < 0) {
                 if (!isMusicOf) {
                     this.chicken_sound.play();
                 }
@@ -300,7 +305,7 @@ class World {
      */
     checkCollisionsSmallEnemie() {
         level1.smallEnemies.forEach((smallEnemy) => {
-            if (this.character.isColliding(smallEnemy, 80) && this.character.isAboveGround()) {
+            if (this.character.isColliding(smallEnemy, 80) && this.character.isAboveGround() && this.character.speedY < 0) {
                 if (!isMusicOf) {
                     this.chicken_sound.play();
                 }

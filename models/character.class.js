@@ -3,7 +3,7 @@ class Character extends MovableObject {
     x = 80;
     height = 130;
     width = 230;
-    speed = 5;
+    speed = 7;
     idle = 0;
     world;
     walking_sound = new Audio('audio/run.mp3');

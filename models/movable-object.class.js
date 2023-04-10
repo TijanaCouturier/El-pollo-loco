@@ -13,7 +13,6 @@ class MovableObject extends DrawableObject {
      * apply gravitiy on elements for the y-axis
      */
     applyGravity() {
-
         setInterval(() => {
             if (this.isAboveGround() || this.speedY > 0) {
                 this.y -= this.speedY;
@@ -27,7 +26,6 @@ class MovableObject extends DrawableObject {
      * apply gravitiy on Endboss for the y-axis
      */
     applyGravityB() {
-
         setInterval(() => {
             if (this.isAboveGround() || this.speedY > 0) {
                 this.y -= this.speedY;

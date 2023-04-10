@@ -24,7 +24,6 @@ body {
 
 .start-game-btn {
     background-color: rgb(252, 164, 2);
-    /* background-color: #e9a52b; */
     box-shadow: 0px 0px 6px 0px #6c6c6c;
     border-radius: 10px;
     font-weight: bold;
@@ -126,24 +125,10 @@ h1 {
 .panel-wrapper {
     height: 42px;
     display: flex;
-    /* justify-content: center;
-    align-items: center; */
     position: absolute;
     top: 30px;
     right: 40px;
 }
-
-
-/*
-.panel-wrapperStart {
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: flex-start;
-    position: absolute;
-    top: 181px;
-    right: 209px;
-} */
 
 .panel {
     display: flex;
@@ -172,14 +157,10 @@ h1 {
     border: none;
     user-select: none;
     margin-inline-end: 25px;
-    /* background-color: rgb(0, 0, 0, 0.4); */
     background-color: rgb(252, 164, 2);
     text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
     box-shadow: 0px 0px 6px 0px #6c6c6c;
     cursor: pointer;
-    /* background-color: #5f4949;
-    background-color: #4b0e0e;
-    background-color: #6c6969; */
 }
 
 #btnBack {
@@ -226,7 +207,7 @@ h1 {
     display: none;
 }
 
-.gameOverFullscreen {
-    height: 100vh;
-    width: 100vw;
+.gameOverPosition {
+    height: 100%;
+    width: 100%;
 }

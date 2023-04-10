@@ -41,7 +41,6 @@
         <div class="panel">
             <div class="panel-wrapper d-none" id="fullscreen-div">
                 <button id="btnBack" title="back"><img class="btn" src="img/undo.png" onclick="restart()"></button>
-                <!--<button id="btnPlay"><img class="btn" src="img/arrow-39-24.png"></button>-->
                 <button id="btnMute" title="mute"><img id="btnMute1" class="btn" src="img/speaker-on.png" onclick="musicOf(this)"></button>
 
                 <div>
@@ -59,6 +58,7 @@
         </a>
 
         <canvas id="canvas" width="720" height="480"></canvas>
+
         <!--Mobile Version-->
         <div id="overlay" class="overlay d-none">
             <div class="panel">
@@ -72,37 +72,14 @@
                     <button id="btnThrow"><img class="btn bottle" src="img/throw.png"></button>
                 </div>
             </div>
-
         </div>
-
     </div>
 
+    <!--Mobile warning image-->
     <div class="mobile-warning">
         <img class="phone-icon" src="img/phone.png">
         <p>Please turn around your mobile phone.</p>
     </div>
-
-    <!--
-     <div id="fullscreen-btn" class="fullscreen-btn pointer hide" onclick="showFullscreen() ">
-        <i class="material-icons">fullscreen</i>
-     </div>
-     <div id="fullscreenexit-btn" class="fullscreenexit-btn pointer hide" onclick="exitFullscreen() ">
-        <i class="material-icons">fullscreen_exit</i>
-     </div>
-
-
-
-      oder
-     <div id="enterfullscreen" onclick="activateFullscreen();">
-            <span class="">
-                <button><img><button>
-            </span>
-     </div>
-    -->
-
-
-
-
 </body>
 
 </html>
