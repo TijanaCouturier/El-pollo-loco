@@ -235,6 +235,7 @@ function fullscreen() {
     document.addEventListener('fullscreenchange', closeFullHandler, false);
 }
 
+
 function closeFullHandler() {
     if (isFullscreen) {
         document.getElementById('showFullscreen').setAttribute('onclick', `javascript: fullscreen()`);
